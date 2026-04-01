@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173', // Vite default port
+  origin: ['http://localhost:5173', 'https://vedic-astrology.vercel.app'], // Replace with your exact Vercel URL
   credentials: true
 }));
 app.use(express.json());
