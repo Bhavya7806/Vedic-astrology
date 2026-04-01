@@ -1,0 +1,236 @@
+.chart-generator-section {
+  padding: 6rem 10%;
+  background: radial-gradient(circle at center, var(--color-purple) 0%, var(--color-midnight) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generator-container {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(26, 26, 58, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.05);
+}
+
+.generator-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.generator-header h2 {
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.generator-header p {
+  color: var(--color-text-muted);
+}
+
+.generator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row.split {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-row.split .input-wrapper {
+  flex: 1;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-wrapper label {
+  color: var(--color-sandalwood);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.input-wrapper input {
+  padding: 1rem;
+  background: rgba(11, 12, 16, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Custom styling for standard date/time picker icons to make them blend */
+::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(1) hue-rotate(350deg) saturate(3) brightness(0.9);
+  cursor: pointer;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+  background: rgba(11, 12, 16, 0.8);
+}
+
+.hint-text {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.btn-generate {
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background: linear-gradient(45deg, var(--color-gold), var(--color-saffron));
+  color: var(--color-midnight);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 140, 66, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-generate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(255, 140, 66, 0.6);
+}
+
+/* --- Loading State Animations --- */
+.calculation-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.loader-wheel {
+  font-size: 5rem;
+  color: var(--color-gold);
+  margin-bottom: 2rem;
+  animation: spin 3s infinite linear;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+}
+
+.pulse-text {
+  color: var(--color-sandalwood);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  animation: pulse 1.5s infinite;
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-saffron));
+  animation: fillProgress 4.5s ease-in-out forwards;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes fillProgress {
+  0% { width: 0%; }
+  33% { width: 30%; }
+  66% { width: 70%; }
+  100% { width: 100%; }
+}
+/* Autocomplete Dropdown Styles */
+.autocomplete-wrapper {
+  position: relative;
+}
+
+.text-saffron {
+  color: var(--color-saffron) !important;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background: var(--color-midnight);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  padding: 0;
+  list-style: none;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.suggestions-dropdown li {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+}
+
+.suggestions-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.suggestions-dropdown li:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.city-name {
+  color: var(--color-text-main);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.state-name {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+/* Custom scrollbar for the dropdown */
+.suggestions-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.suggestions-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+}

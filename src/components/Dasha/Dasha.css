@@ -1,0 +1,246 @@
+.dasha-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, var(--color-purple) 0%, var(--color-midnight) 100%);
+  padding-top: 100px;
+}
+
+.dasha-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.btn-back {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: color 0.3s;
+}
+
+.btn-back:hover {
+  color: var(--color-gold);
+}
+
+.dasha-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dasha-header h2 {
+  color: var(--color-gold);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dasha-header p {
+  color: var(--color-text-muted);
+}
+
+.active-dasha-card {
+  background: linear-gradient(145deg, rgba(26, 26, 58, 0.8) 0%, rgba(11, 12, 16, 0.9) 100%);
+  border: 1px solid var(--color-saffron);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(255, 153, 51, 0.15);
+  margin-bottom: 2rem;
+}
+
+.dasha-planet {
+  font-size: 3rem;
+  color: var(--color-sandalwood);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.dasha-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-line {
+  height: 2px;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text-main);
+}
+
+.dasha-duration {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.dasha-theme {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.dasha-theme h4 {
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.dasha-theme p {
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+.dasha-explanation {
+  text-align: center;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  padding: 0 2rem;
+}
+
+.dasha-loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-gold);
+  font-size: 1.5rem;
+}
+/* --- SUB-PERIODS TIMELINE STYLES --- */
+
+.sub-periods-section {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sub-periods-section h3 {
+  color: var(--color-sandalwood);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.sub-subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+}
+
+.timeline-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+/* The vertical line */
+.timeline-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background: rgba(255, 215, 0, 0.2);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 2.5rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.timeline-item:hover {
+  opacity: 1;
+}
+
+/* The glowing dot */
+.timeline-dot {
+  position: absolute;
+  left: -2px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-midnight);
+  border: 2px solid var(--color-gold);
+  z-index: 2;
+}
+
+/* Highlight the current sub-period */
+.timeline-item.active-sub {
+  opacity: 1;
+}
+
+.timeline-item.active-sub .timeline-dot {
+  background: var(--color-saffron);
+  border-color: var(--color-saffron);
+  box-shadow: 0 0 15px rgba(255, 153, 51, 0.8);
+}
+
+.timeline-item.active-sub .timeline-content {
+  background: rgba(255, 153, 51, 0.05);
+  border: 1px solid rgba(255, 153, 51, 0.3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transform: translateX(10px);
+}
+
+.timeline-dates {
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+.timeline-title {
+  color: var(--color-text-main);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.active-badge {
+  background: var(--color-saffron);
+  color: var(--color-midnight);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.timeline-prediction {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+/* --- PREMIUM DASHA LOADER --- */
+.premium-loader-container { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+
+.cosmic-clock-loader { width: 100px; height: 100px; position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; }
+.clock-outer { position: absolute; width: 100%; height: 100%; border: 2px dashed var(--color-gold); border-radius: 50%; animation: spinRight 8s linear infinite; opacity: 0.5; }
+.clock-inner { position: absolute; width: 70%; height: 70%; border: 2px solid var(--color-saffron); border-radius: 50%; border-top-color: transparent; animation: spinLeft 3s linear infinite; }
+.clock-center { width: 15px; height: 15px; background: var(--color-gold); border-radius: 50%; box-shadow: 0 0 15px var(--color-gold); animation: pulseClock 2s infinite alternate; }
+
+.loader-title.dasha-title { color: var(--color-gold); font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 0.5rem; animation: pulseText 2s infinite; }
+.loader-subtitle { color: var(--color-text-muted); font-size: 0.9rem; }
+
+@keyframes spinRight { 100% { transform: rotate(360deg); } }
+@keyframes spinLeft { 100% { transform: rotate(-360deg); } }
+@keyframes pulseClock { 0% { transform: scale(0.8); } 100% { transform: scale(1.2); box-shadow: 0 0 30px var(--color-saffron); } }
+@keyframes pulseText { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }

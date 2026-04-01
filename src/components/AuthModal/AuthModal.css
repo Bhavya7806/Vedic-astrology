@@ -1,0 +1,191 @@
+/* Full screen overlay to dim the background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 5, 21, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* The Sacred Altar (Glassmorphism Card) */
+.modal-altar {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(145deg, rgba(26, 26, 58, 0.6) 0%, rgba(11, 12, 16, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 215, 0, 0.15); /* Subtle gold border */
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(255, 153, 51, 0.1), inset 0 0 20px rgba(255, 215, 0, 0.05); /* Inner and outer cosmic glow */
+  text-align: center;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: var(--color-saffron);
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+}
+
+.modal-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.modal-header h2 {
+  color: var(--color-sandalwood);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-header p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--color-gold);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.btn-auth-primary {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(45deg, var(--color-gold), var(--color-saffron));
+  color: var(--color-midnight);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 140, 66, 0.3);
+  transition: all 0.3s;
+}
+
+.btn-auth-primary:hover {
+  box-shadow: 0 0 25px rgba(255, 140, 66, 0.6);
+  transform: translateY(-2px);
+}
+
+.divider {
+  margin: 1.5rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+.divider span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  background: var(--color-midnight); /* Masks the line behind text */
+  padding: 0 0.5rem;
+}
+
+.btn-google {
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--color-text-main);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-google:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-google img {
+  width: 24px;
+}
+
+.modal-footer {
+  margin-top: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.toggle-link {
+  color: var(--color-gold);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.toggle-link:hover {
+  color: var(--color-saffron);
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

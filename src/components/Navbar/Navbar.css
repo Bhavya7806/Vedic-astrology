@@ -1,0 +1,112 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(10, 10, 42, 0.7); /* Deep indigo with transparency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Update the main logo container */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none; /* Removes any default link underlining */
+  transition: all 0.3s ease;
+}
+
+/* Style the text with a golden gradient that blends into the background */
+.logo-text {
+  background: linear-gradient(45deg, var(--color-gold), var(--color-sandalwood));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Makes the background gradient show through the text */
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3)); /* Soft glow */
+}
+
+/* Give the OM icon a matching glow */
+.logo-icon {
+  color: var(--color-gold);
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* Smooth hover effect that brightens the glow instead of looking like a basic link */
+.navbar-logo:hover {
+  transform: scale(1.02);
+}
+
+.navbar-logo:hover .logo-text, 
+.navbar-logo:hover .logo-icon {
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: var(--color-text-main);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--color-saffron);
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-login, .btn-signup {
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-login {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-login:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.btn-signup {
+  background: var(--color-gold);
+  color: var(--color-midnight);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-signup:hover {
+  background: #e6c200;
+  transform: translateY(-2px);
+}

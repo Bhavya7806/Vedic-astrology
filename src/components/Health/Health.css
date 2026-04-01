@@ -1,0 +1,79 @@
+.health-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0f2e1a 0%, var(--color-midnight) 100%);
+  padding-top: 100px;
+}
+
+.health-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+.health-header { text-align: center; margin-bottom: 3rem; }
+.health-header h2 { color: #86efac; font-size: 2.5rem; margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(134, 239, 172, 0.4); }
+.health-header p { color: #dcfce7; }
+
+.health-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .health-grid { grid-template-columns: 1fr 1.5fr; } }
+
+.astrology-card { background: rgba(15, 15, 45, 0.6); border: 1px solid rgba(134, 239, 172, 0.2); border-radius: 16px; padding: 2rem; }
+.dosha-card { border-left: 4px solid #4ade80; }
+.sixth-house-card { border-left: 4px solid #22c55e; }
+
+.dosha-text, .vitality-text { color: var(--color-text-main); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.6; }
+.dosha-text strong, .vitality-text strong { color: #86efac; display: block; margin-bottom: 0.3rem; }
+
+.badge-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.badge { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); padding: 0.5rem 1rem; border-radius: 20px; color: #86efac; font-size: 0.9rem; }
+
+.focus-area { background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #86efac; }
+.focus-area h4 { color: #86efac; margin-bottom: 0.8rem; }
+.focus-area p { color: var(--color-text-main); line-height: 1.6; }
+/* --- PREMIUM HEALTH LOADER --- */
+.premium-loader-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.health-energy-ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px dashed rgba(74, 222, 128, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 8s linear infinite;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.core-pulse {
+  width: 40px;
+  height: 40px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #4ade80, 0 0 40px #22c55e;
+  animation: pulseHealth 1.5s ease-in-out infinite alternate;
+}
+
+.loader-title {
+  color: #86efac;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  animation: pulseText 2s infinite;
+}
+
+.loader-subtitle {
+  color: #dcfce7;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@keyframes pulseHealth {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 40px #4ade80, 0 0 80px #22c55e; }
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes pulseText { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }

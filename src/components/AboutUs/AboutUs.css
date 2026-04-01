@@ -1,0 +1,87 @@
+.about-us {
+  padding: 6rem 10%;
+  background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-midnight) 100%);
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.about-content p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.stats-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat-badge {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 215, 0, 0.05);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 4px;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.about-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yantra-placeholder {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  animation: pulse 4s infinite alternate;
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  opacity: 0.2;
+}
+
+.triangle.up {
+  border-bottom: 250px solid var(--color-saffron);
+  top: 25px;
+}
+
+.triangle.down {
+  border-top: 250px solid var(--color-gold);
+  top: 75px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
