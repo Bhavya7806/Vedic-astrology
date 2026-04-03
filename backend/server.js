@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://vedic-astrology.vercel.app'], // Replace with your exact Vercel URL
+  origin: ['http://localhost:5173', 'https://vedic-astrology-nine.vercel.app'], // Replace with your exact Vercel URL
   credentials: true
 }));
 app.use(express.json());
